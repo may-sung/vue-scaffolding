@@ -107,27 +107,21 @@ vue create 프로젝트명
 > ? Please pick a preset: 
 <span style="color: green;">Manually select features</span> 
 <br />
-
 > ? Check the features needed for your project: 
 <span style="color: green;">Babel, Linter / Formatter, Unit Testing</span>
 <br />
-
 > ? Pick a linter / formatter config:
 <span style="color: green;">ESLint + Prettier</span>
 <br />
-
 > ? Pick additional lint features: 
 <span style="color: green;">Lint on save</span>
 <br />
-
 > ? Pick a unit testing solution:
 <span style="color: green;">Jest</span>
 <br />
-
 > ? Where do you prefer placing config for Babel, ESLint, etc.?
 <span style="color: green;">In dedicated config files</span>
 <br />
-
 > ? Save this as a preset for future projects? 
 <span style="color: green;">n</span>
 
