@@ -45,26 +45,20 @@ vue --version
 vue create 프로젝트명
 ```
 
-> ? Please pick a preset: 
->> Manually select features
-
-> ? Check the features needed for your project: 
->> Babel, Linter / Formatter, Unit Testing
-
-> ? Pick a linter / formatter config:
->> ESLint + Prettier
-
-> ? Pick additional lint features: 
->> Lint on save
-
-> ? Pick a unit testing solution:
->> Jest
-
-> ? Where do you prefer placing config for Babel, ESLint, etc.?
->> In dedicated config files
-
-> ? Save this as a preset for future projects? 
->> n
+* ? Please pick a preset:    
+    => Manually select features
+* ? Check the features needed for your project:    
+    => Babel, Linter / Formatter, Unit Testing
+* ? Pick a linter / formatter config:   
+    => ESLint + Prettier
+* ? Pick additional lint features:    
+    => Lint on save
+* ? Pick a unit testing solution:   
+    => Jest
+* ? Where do you prefer placing config for Babel, ESLint, etc.?   
+    => In dedicated config files
+* ? Save this as a preset for future projects?    
+    => n
 
 #### 2.2.3. 로컬 서버 실행
 
@@ -226,24 +220,20 @@ npm run dev # API 서버 실행
 #### 3.2.2. DB 구성
 
 ##### 3.2.1. MongoDB Cloud 회원 가입
-[mongoDB] https://www.mongodb.com/cloud
-> Sign In → Register : 회원 가입 후, 로그인하기
+[mongoDB] https://www.mongodb.com/cloud   
+Sign In → Register : 회원 가입 후, 로그인하기
 
 ##### 3.2.2. MongoDB 인스턴스 생성
-> Build a Cluster 버튼 클릭
-
-> Starter Clusters FREE 선택 생성
-
-> 기본 세팅을 두고 맨 아래 FREE 임을 확인 후 Create Cluster 버튼 생성 (약 5분 뒤 확인)
-
-> 좌측 메뉴 SECURITY → Network Access →  
+* Build a Cluster 버튼 클릭
+* Starter Clusters FREE 선택 생성
+* 기본 세팅을 두고 맨 아래 FREE 임을 확인 후 Create Cluster 버튼 생성 (약 5분 뒤 확인)
+* 좌측 메뉴 SECURITY → Network Access →  
 IP Whitelist 클릭 → ALLOW ACCESS FROM ANYWHERE 클릭 → Confirm 버튼 클릭
-
-> 좌측 메뉴 SECURITY → Database Access → MongoDB Users → ADD NEW USER 버튼 클릭 → User Name: test / Password: **** 등록 후, Add User 버튼 클릭
-
-> 좌측 메뉴 ATLAS → Clusters → CONNECT → Connect Your Application → Connection String Only 복사
+* 좌측 메뉴 SECURITY → Database Access → MongoDB Users → ADD NEW USER 버튼 클릭 → User Name: test / Password: **** 등록 후, Add User 버튼 클릭
+* 좌측 메뉴 ATLAS → Clusters → CONNECT → Connect Your Application → Connection String Only 복사
 
 #### 3.2.3. DB 연결
+
 ```javascript
 // src/app.js line 20
 // 위 MongoDB에서 복사된 코드를 넣는다
@@ -256,8 +246,7 @@ mongoose.connect('mongodb://복사된 String 코드', {
 npm run dev # 서버 실행
 ```
 
-> 브라우저 <span style="color: green">localhost:3000/api/docs</span> 검색
-
-> /signup 클릭 → Try it out 버튼 클릭 → 사용자 아이디 / 비밀번호 / 닉네임 입력 → Execute 버튼 클릭 → 하단에 Code 200 또는 VSCode에서 log 확인하여 DB연결이 정상적으로 되었는지 확인
+[로컬 호스트 접속] https://localhost:3000/api/docs   
+/signup 클릭 → Try it out 버튼 클릭 → 사용자 아이디, 비밀번호, 닉네임 입력 → Execute 버튼 클릭 → 하단에 Code 200 또는 VSCode에서 log 확인하여 DB연결이 정상적으로 되었는지 확인
 
 ---
