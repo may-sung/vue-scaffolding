@@ -109,3 +109,99 @@ module.exports = {
   ],
 };
 ```
+
+## 3. 라우터 설정(& 코드 스플리팅)
+
+> history 모드로 프로덕션 레벨에서 배포시 Server Configuration을 설정해야 한다.   
+정적인 웹 자원을 서버에 배포할 때 그 서버에서 URL에 대한 우회, 필터링 기능 등을 넣어 주어야 한다.  
+아래 공식문서를 보면 각 서버 종류별로 설정하는 방법이 나와 있다.  
+https://router.vuejs.org/guide/essentials/history-mode.html#html5-history-mode
+
+```bash
+# 라우터 모듈 설치
+npm i vue-router
+```
+
+```js
+// src/routes/index.js
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
+
+export default new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            redirect: '/login',
+        },
+        {
+            path: '/login',
+            component: () => import('@/views/LoginPage.vue'),
+        },
+        {
+            path: '/signup',
+            component: () => import('@/views/SignupPage.vue'),
+        },
+        {
+            path: '*',
+            component: () => import('@/views/NotFoundPage.vue'),
+        },
+    ],
+});
+
+// src/main.js
+import Vue from 'vue';
+import App from '@/App.vue';
+import router from '@/routes/index'; //라우터 코드 추가
+
+Vue.config.productionTip = false;
+
+new Vue({
+    render: (h) => h(App),
+    router, //라우터 코드 추가
+}).$mount('#app');
+```
+
+```html
+<!-- src/views/LoginPage.vue -->
+<template>
+    <div>login</div>
+</template>
+
+<script>
+export default {
+
+};
+</script>
+
+<style>
+
+</style>
+
+<!-- src/App.vue -->
+<template>
+    <div>
+        <header>
+            <router-link to="/login">
+                로그인
+            </router-link> |
+            <router-link to="/signup">
+                회원가입
+            </router-link>
+        </header>
+        <router-view />
+    </div>
+</template>
+
+<script>
+export default {
+
+};
+</script>
+
+<style>
+
+</style>
+```
