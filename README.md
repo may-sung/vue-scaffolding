@@ -69,4 +69,5 @@ git config --global commit.template ~/.gitmessage.txt
 
 ### 2.4. Tip
 * 리눅스 vi 명령어 - https://blockdmask.tistory.com/25
+* 리눅스 vi 명령어 - https://iamfreeman.tistory.com/entry/vi-vim-편집기-명령어-정리-단축키-모음-목록 [자유인을 위하여~ *^^*]
 * git commit 으로 실행
