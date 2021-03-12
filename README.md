@@ -66,3 +66,7 @@ vim ~/.gitmessage.txt
 ```bash
 git config --global commit.template ~/.gitmessage.txt
 ```
+
+### 2.4. Tip
+* 리눅스 vi 명령어 - https://blockdmask.tistory.com/25
+* git commit 으로 실행
